@@ -195,7 +195,7 @@ locals {
   private_key_filename = "${var.prefix}-ssh-key.pem"
 }
 
-resource "aws_key_pair" "hashicat" {
+resource "aws_key_pair" "hashicat2" {
   key_name   = local.private_key_filename
   public_key = tls_private_key.hashicat2.public_key_openssh
 }
