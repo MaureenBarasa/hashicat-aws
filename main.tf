@@ -121,7 +121,7 @@ resource "aws_eip_association" "hashicat" {
 resource "aws_instance" "hashicat" {
   ami                         = data.aws_ami.ubuntu.id
   instance_type               = var.instance_type
-  key_name                    = aws_key_pair.hashicat2.key_name
+  key_name                    = aws_key_pair.hashicat3.key_name
   associate_public_ip_address = true
   subnet_id                   = aws_subnet.hashicat.id
   vpc_security_group_ids      = [aws_security_group.hashicat.id]
@@ -195,7 +195,7 @@ locals {
   private_key_filename = "${var.prefix}-ssh-key.pem"
 }
 
-resource "aws_key_pair" "hashicat2" {
+resource "aws_key_pair" "hashicat3" {
   key_name   = local.private_key_filename
   public_key = tls_private_key.hashicat2.public_key_openssh
 }
