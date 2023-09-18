@@ -128,7 +128,7 @@ resource "aws_instance" "hashicat" {
 
   tags = {
     Name = "${var.prefix}-hashicat-instance"
-    Department = "DevOps"
+    Department = "devops"
     Billable = "true"
   }
 }
@@ -187,7 +187,7 @@ resource "null_resource" "configure-cat-app" {
   }
 }
 
-resource "tls_private_key" "hashicat" {
+resource "tls_private_key" "hashicat2" {
   algorithm = "ED25519"
 }
 
